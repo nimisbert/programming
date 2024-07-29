@@ -1,27 +1,39 @@
 #ifndef STRATEGY_HPP
 #define STRATEGY_HPP
 
-#include <string>
+/**
+ * Classes abstraite, interface strategy
+ * doAlgorithm, polymorphisme de calcul de deux integers.
+ **/
 
-/* Objet virtuel des strategies (mere/interface) */
 class Strategy
 {
 public:
+    Strategy() = default;
     virtual ~Strategy() = default;
-    virtual std::string doAlgorithm(std::string_view data) const = 0;
+    virtual int doAlgorithm( int a, int b ) const = 0;
 };
 
-/* Objet concret de strategie (fille) */
-class StrategyA : Strategy 
+/**
+ * Classes concretes, implementation de strategy de calcul.
+ * StrategyA, polymorphisme doAlgorithm est une addition.
+ * StrategyB, polymorphisme doAlgorithm est une soustraction.
+ **/
+
+class StrategyA : public Strategy
 {
 public:
-    std::string doAlgorithm( std::string_view data );
+    StrategyA() = default;
+    ~StrategyA() = default;
+    int doAlgorithm( int a, int b ) const override;
 };
 
-class StrategyB : Strategy
+class StrategyB : public Strategy 
 {
 public:
-    std::string doAlgorithm( std::string_view data );
+    StrategyB() = default;
+    ~StrategyB() = default;
+    int doAlgorithm( int a, int b ) const override;
 };
 
 #endif

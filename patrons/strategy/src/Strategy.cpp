@@ -1,14 +1,10 @@
 #include <algorithm>
 #include "Strategy.hpp"
 
-std::string StrategyA::doAlgorithm( std::string_view data ) {
-    std::string result( data );
-    std::sort( std::begin(result), std::end(result), std::greater<>() );
-    return result;
+int StrategyA::doAlgorithm( int a, int b ) const {
+    return a + b;
 }
 
-std::string StrategyB::doAlgorithm( std::string_view data ) {
-    std::string result( data );
-    std::sort( std::begin(result), std::end(result) );
-    return result;
+int StrategyB::doAlgorithm( int a, int b ) const {
+    return a - b;
 }
