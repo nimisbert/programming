@@ -6,3 +6,5 @@ project( patrons )
 
 add_subdirectory( singleton )
 add_subdirectory( strategy )
+add_subdirectory( mediator )
+add_subdirectory( factory )
