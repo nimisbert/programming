@@ -15,7 +15,7 @@ class Component2;
  **/
 class Mediator {
 public:
-    virtual void notify( Component *sender, std::string event ) const = 0;        
+    virtual void notify( Component *sender, std::string event ) = 0;        
 };
 
 

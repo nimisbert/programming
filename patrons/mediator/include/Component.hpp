@@ -14,7 +14,8 @@ class Component {
 protected:
     Mediator *mediator;
 public: 
-    Component( Mediator *mediator );
+    Component( Mediator *mediator = nullptr );
+    void setMediator( Mediator *mediator );
 };
 
 /**

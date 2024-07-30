@@ -1,6 +1,14 @@
 #include <iostream>
 #include "Component.hpp"
 
+Component::Component( Mediator *mediator ) {
+    this->mediator = mediator;
+}
+
+void Component::setMediator( Mediator *mediator ) {
+    this->mediator = mediator;
+}
+
 void Component1::doA() {
     std::cout << "Component 1 does A\n";
     this->mediator->notify(this, "A");
